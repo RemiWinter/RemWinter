@@ -1,0 +1,45 @@
+/* Utilities */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.card {
+  border-radius: 0.25rem;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  margin: 1rem;
+  text-align: center;
+  color: white;
+  background-color: var(--bgprimary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.bg-dark {
+  color: white;
+  background-color: var(--bgprimary);
+}
