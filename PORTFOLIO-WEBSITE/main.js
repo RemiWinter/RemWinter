@@ -8,7 +8,6 @@ const sevenH = window.matchMedia('(max-width: 766px)');
 
 // tl.to('.about', 1, {x:-100,});
 // tl2.to('.about', 0.5, {x:-100});
-
 tl.to('.hi-div', 1, {x:-200, y:50});
 tl.to('.i-0-div', 1, {x:-190, y:50}, '=-1');
 tl.to('.im-div', 1, {x:-104, y:-23}, '=-1');
@@ -82,7 +81,18 @@ setTimeout(() => {
   document.querySelector('#buffer').classList.remove('hide');
   document.querySelector('.projects-section').classList.remove('hide');
   document.querySelector('.contact-section').classList.remove('hide');
-  tl2.to('.hi-full', 0.3, {opacity:0});
+
+  window.onscroll = () => {
+    console.log(window.scrollY);
+    if (window.scrollY <= 800) {
+      for (i=0; i<gridItems.length; i++) {
+        item = gridItems[i];
+        item.classList.remove('hide');
+      }
+    }
+  };
+
+  tl2.to('.hi-full', 0.3, {opacity:0}), '=-0.5';
   tl2.to('.im-full', 0.3, {opacity:0}, '=-0.3');
   tl2.to('.remi-full', 0.3, {opacity:0}, '=-0.3');
   tl2.to('.winter-full', 0.3, {opacity:0}, '=-0.3');
@@ -93,20 +103,21 @@ setTimeout(() => {
   // tl2.to('.welcome', 0.1, {opacity:0}, '=-0.4');  Nav scroll animation
   // tl2.to('.projects', 0.5, {left:55, right:90}, '=-0.5');  Nav scroll animation
   tl2.to('.projects-link', 0.5, { color:'red'}, '=-0.5');
-  tl2.to('.item-1', 0.5, {opacity:1, scale:1}, '=-0.4');
-  tl2.to('.item-2', 0.5, {opacity:1, scale:1}, '=-0.4');
-  tl2.to('.item-3', 0.5, {opacity:1, scale:1}, '=-0.4');
-  tl2.to('.item-4', 0.5, {opacity:1, scale:1}, '=-0.4');
+  tl2.from('.item-1', 0.2, {opacity:0.01, x:-300});
+  tl2.from('.item-2', 0.2, {opacity:0.01, x:300});
+  tl2.from('.item-3', 0.2, {opacity:0.01, x:-300});
+  tl2.from('.item-4', 0.2, {opacity:0.01, x:300});
+  // tl2.from('.grid-items', 0.2, {x:200});
   // tl3.to('.projects', 0.5, {right:'80%'});  Nav scroll animation
   tl3.to('.projects-link', 0.5, {color:'white'}, '=-0.5');
   // tl3.to('.contact', 0.5, {left:20, right:40}, '=-0.5');  Nav scroll animation
   tl3.to('.contact-link', 1, { color:'red'}, '=-0.5');
-  tl3.from('.c-email', 0.3, {x:-40, opacity:0}, '=-0.3');
-  tl3.from('.c-email-2', 0.3, {x:-40, opacity:0}, '=-0.3');
-  tl3.from('.c-git', 0.3, {x:-40, opacity:0}), '=-0.3';
-  tl3.from('.c-git-2', 0.3, {x:-40, opacity:0}, '=-0.3');
-  tl3.from('.c-linkedin', 0.3, {x:-40, opacity:0}), '=-0.3';
-  tl3.from('.c-linkedin-2', 0.3, {x:-40, opacity:0}, '=-0.3');
+  // tl3.from('.c-email', 0.3, {x:-40}, '=-0.3');
+  // tl3.from('.c-email-2', 0.3, {x:-40}, '=-0.3');
+  // tl3.from('.c-git', 0.3, {x:-40}), '=-0.3';
+  // tl3.from('.c-git-2', 0.3, {x:-40}, '=-0.3');
+  // tl3.from('.c-linkedin', 0.3, {x:-40}), '=-0.3';
+  // tl3.from('.c-linkedin-2', 0.3, {x:-40}, '=-0.3');
 }, 9000)
 
 // window.onscroll = () => {aboutScroll()};
