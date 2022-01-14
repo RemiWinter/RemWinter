@@ -15,7 +15,12 @@ tl.to('.i-1-div', 1, {x:-160, y:-23}, '=-1');
 tl.to('.remi-div', 1, {x:-5, y:-96}, '=-1');
 tl.to('.i-2-div', 1, {x:42, y:-96}, '=-1');
 tl.to('.winter-div', 1, {x:154, y:-168}, '=-1');
-tl.to('.i-3-div', 1, {x:113, y:-168}, '=-1');
+if (window.screen.width / window.screen.height === 3/2){
+  tl.to('.i-3-div', 1, {x:113, y:-168}, '=-1');
+}
+else {
+  tl.to('.i-3-div', 1, {x:113, y:-168}, '=-1');
+}
 // tl.to('.about', 1, {left:0, right:0}, '=-0.8');  Nav scroll animation
 tl.to('.about-link', 1, { color:'red'}, '=-0.8');
 tl.from('.about-me-div', 1, {opacity:0, scale:0, y:-100}, '=-0.8');
