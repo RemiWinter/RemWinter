@@ -93,8 +93,8 @@ i {
   padding-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  transform: scale(0.5);
+  /* transition: transform 0.3s; */
+  /* transform: scale(0.7); */
   /* z-index: -1; */
 }
 
@@ -454,6 +454,9 @@ span.animation {
 
 .projects-section {
   margin-top: -1200px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: -1;
 }
 
 .projects-content {
@@ -469,7 +472,7 @@ span.animation {
 }
 
 .grid-items {
-  opacity: 0;
+  /* opacity: 0; */
   max-width: 500px;
 }
 
