@@ -35,7 +35,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
-  height: 44px;
+  /* height: 44px; */
 }
 
 nav.sticky {
@@ -131,6 +131,24 @@ header .container {
   background-position: center;
 }
 
+.nav-main {
+  display: none;
+}
+
+#check-btn {
+  display: none;
+}
+
+.ham-btn {
+  display: none;
+  /* position: absolute; */
+  /* margin: auto 0; */
+  cursor: pointer;
+  float: right;
+  right: 0;
+  font-size: 25px;
+}
+
 .navlist {
   display: flex;
   justify-content: space-between;
@@ -148,6 +166,10 @@ header .container {
   /* position: absolute; */
   /* left: 0; */
   /* right: 0; */
+}
+
+.welcome2 {
+  display: none;
 }
 
 .about {
@@ -204,6 +226,10 @@ header .container {
   background-color: purple;
   margin-top: 500px;
   z-index: -1;
+}
+
+.home {
+  display: none;
 }
 
 .about.end {
@@ -463,12 +489,12 @@ span.animation {
   border-bottom: 1px solid rgb(177, 176, 176);
 }
 
-.projects-content {
-  /* padding: 0 200px; */
-}
-
 .projects-content .grid {
   margin-bottom: 10px;
+}
+
+.projects-header {
+  display: none;
 }
 
 .grid-items {
@@ -597,7 +623,7 @@ video {
   }
 
   .coding-gif {
-    opacity: 0;
+    transform: translateY(20px);
   }
   .web-dev {
     display: none;
@@ -624,8 +650,140 @@ video {
 }
 
 @media screen and (max-width: 700px) {
+  header {
+    overflow: hidden;
+  }
+
   .container {
     padding: 0 30px 0 30px;
+  }
+
+  .welcome2 {
+    display: block;
+    font-weight: normal;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .welcome {
+    display: none;
+  }
+
+  .welcome2 {
+    font-size: 16px;
+    margin: auto 0;
+
+    text-align: center;
+  }
+
+  #check-btn {
+    /* display: block; */
+  }
+
+  .ham-btn {
+    display: block;
+    z-index: 3;
+    opacity: 1;
+  }
+
+  nav {
+    opacity: 0;
+    animation: slideInNav 0.4s 6.5s forwards;
+  }
+
+  .navlist {
+    width: 100%;
+  }
+
+  .navlist {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(116, 116, 116);
+    right: -100%;
+    transition: 0.2s ease-out;
+    opacity: 0;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #check-btn:checked ~ .navlist {
+    right: 0;
+    opacity: 1;
+  }
+
+  .navlist li {
+    margin: 60px;
+    line-height: 20px;
+  }
+
+  .home {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-me-div {
+    padding: 0;
+  }
+
+  .about-me {
+    /* opacity: 0; */
+    transform: translateY(100px);
+  }
+
+  .coding-gif {
+    opacity: 0;
+  }
+
+  .projects-header {
+    display: block;
+    text-align: center;
+  }
+
+  .grid-col-2 {
+    grid-template-columns: auto;
+  }
+
+  .cta-btns {
+    opacity: 1;
+    flex-direction: row;
+    bottom: -60px;
+  }
+
+  .grid-items {
+    margin-top: 60px;
+  }
+
+  .item-1 {
+    margin: 20px;
+  }
+
+  .projects-content {
+    padding-bottom: 40px;
+  }
+
+  .contact-section {
+    padding-top: 20px;
+  }
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-item {
+    margin-bottom: 20px;
   }
 }
 
@@ -657,6 +815,17 @@ video {
   }
   to {
     transform: translateX(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInNav {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
