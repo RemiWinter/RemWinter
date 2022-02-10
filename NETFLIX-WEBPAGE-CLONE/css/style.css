@@ -147,7 +147,11 @@ header svg {
 .banner-container {
   display: flex;
   align-items: center;
-  margin: 0 80.5px 0 80.5px;
+  align-self: center;
+  justify-self: center;
+  /* margin: 0 80.5px 0 80.5px; */
+  margin: 0 auto;
+  max-width: 1100px;
 }
 
 .banner-text {
@@ -166,7 +170,7 @@ header svg {
 }
 
 .banner-media {
-  width: 48%;
+  /* width: 48%; */
   position: relative;
 }
 
@@ -191,9 +195,12 @@ header svg {
   justify-content: space-between;
 }
 
+.banner2 .banner-media-container {
+}
+
 .banner2 .banner-media {
   display: flex;
-  width: 48%;
+  /* width: 48%; */
   height: 100%;
 }
 
@@ -393,7 +400,8 @@ header svg {
 
 footer {
   padding: 70px 45px 0 45px;
-  margin: 0 130.5px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .footer-container {
@@ -405,12 +413,17 @@ footer {
   position: relative;
 }
 
-.footer-rows {
-  display: flex;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 footer p {
   margin-bottom: 30px;
+}
+
+.footer-grid p {
+  grid-column: 1/5;
 }
 
 footer .row {
@@ -483,5 +496,30 @@ footer a:hover {
 
   .banner2 .phone-img {
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .banner1 video {
+    position: absolute;
+    top: 11%;
+    left: 13.2%;
+    height: 73%;
+    width: 73%;
+  }
+  .banner3 video {
+    top: 5%;
+    left: 19%;
+    width: 61%;
+    height: 61%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .banner3 video {
+    top: 1%;
+    left: 19%;
+    width: 61%;
+    height: 61%;
   }
 }
