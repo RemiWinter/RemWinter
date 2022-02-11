@@ -181,14 +181,14 @@ li:nth-of-type(6) {
 
 /* Media Queries */
 
-/* High dpi Displays */
+/* High dpi Displays (Some duplicate code can be deleted here) */
 @media only screen and (-moz-min-device-pixel-ratio: 2),
   only screen and (-o-min-device-pixel-ratio: 2/1),
   only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-device-pixel-ratio: 2) {
   .my-container {
     align-items: center;
-    transform: scale(0.6) translateY(-12%);
+    transform: scale(0.7) translateY(-12%);
   }
 
   .main-text {
@@ -237,6 +237,7 @@ li:nth-of-type(6) {
 
   .sub-text {
     margin-top: 5%;
+    font-size: 0.9rem !important;
   }
 
   .service-list {
@@ -247,14 +248,14 @@ li:nth-of-type(6) {
 
   .service-list li {
     margin-top: 1%;
-    font-size: 22px;
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 1920px) {
-  .services {
+  /* .services {
     height: fit-content;
-  }
+  } */
 }
 
 @media screen and (max-width: 1300px) {
